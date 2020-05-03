@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
-      background-color: #F5F5DC;
+      background-color: white;
     }
     .menu {
       position: fixed;
@@ -15,7 +15,7 @@
       margin-left: -8px;
       margin-right: -10px;
       height: 50px;
-      background: #2b2f3a;
+      background: #28288C;
       width: 120%;
     }
     .menu ul {
@@ -434,11 +434,11 @@
   </center>
   <br>
   <div style="width: 100%; margin-top: 5%;">
-    <input type="checkbox" style="margin-left: 46%"/><font style="font-family: Helvetica, sans-serif; font-weight: 900;">동적 IP</font><br>
-    <input type="checkbox" style="margin-left: 46%"/><font style="font-family: Helvetica, sans-serif; font-weight: 900;">고정 IP</font><br>
-    <input type="checkbox" style="margin-left: 46%"/><font style="font-family: Helvetica, sans-serif; font-weight: 900;">PPPoE</font><br>
-    <input type="checkbox" style="margin-left: 46%"/><font style="font-family: Helvetica, sans-serif; font-weight: 900;">L2TP</font><br>
-    <input type="checkbox" style="margin-left: 46%"/><font style="font-family: Helvetica, sans-serif; font-weight: 900;">PPTP</font><br>
+    <input type="radio" style="margin-left: 15%"/><font style="font-family: Helvetica, sans-serif; font-weight: 900;">동적 IP</font><br>
+    <input type="radio" style="margin-left: 15%"/><font style="font-family: Helvetica, sans-serif; font-weight: 900;">고정 IP</font><br>
+    <input type="radio" style="margin-left: 15%"/><font style="font-family: Helvetica, sans-serif; font-weight: 900;">PPPoE</font><br>
+    <input type="radio" style="margin-left: 15%"/><font style="font-family: Helvetica, sans-serif; font-weight: 900;">L2TP</font><br>
+    <input type="radio" style="margin-left: 15%"/><font style="font-family: Helvetica, sans-serif; font-weight: 900;">PPTP</font><br>
 
     <br><br>
     <button type="button" style="margin-left:82%; width:80px; height:40px; border: none; text-align: center; text-decoration: none; display: inline-block; font-size: 15px; border-radius:10px; border-style: solid;">

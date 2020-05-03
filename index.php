@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
-      background-color: #F5F5DC;
+
     }
     .menu {
       position: fixed;
@@ -429,10 +429,10 @@
     <div style="width: 80%; margin-top: 60px;">
       <form>
         <br><br>
-        <h2 style="display: inline">id : </h2><input style="margin-left: 85px; display: inline; border-left-style:solid; border-top-style:solid; border-bottom-style:solid; border-right: solid; border-radius: 100px; height: 35px; width: 300px; text-align: center; font-size: 20px;" type="text" name="id">
+        <h2 style="display: inline">id : </h2><input style="margin-left: 85px; display: inline; height: 35px; width: 300px; text-align: center; font-size: 20px;" type="text" name="id">
         <br><br><br>
-        <h2 style="display: inline">password : </h2><input style="display: inline; border-left-style:solid; border-top-style:solid; border-bottom-style:solid; border-right: solid; border-radius: 100px; height: 35px; width: 300px; text-align: center; font-size: 20px;" type="password" name="password">
-        <center><button type="button" style="background: #2b2f3a; margin-top: 80px; margin-right: 15px; width:80px; height:40px; border: none; text-align: center; text-decoration: none; display: inline-block; font-size: 15px; border-radius:10px;">
+        <h2 style="display: inline">password : </h2><input style="display: inline; height: 35px; width: 300px; text-align: center; font-size: 20px;" type="password" name="password">
+        <center><button type="button" style="background: #2b2f3a; margin-top: 80px; margin-right: 15px; width:80px; height:40px; border: none; text-align: center; text-decoration: none; display: inline-block; font-size: 15px; ">
         <a style="color: white;text-decoration-line: none; font-family: Helvetica, sans-serif; font-weight: 900;">로그인</a>
       </button></center>
       </form>
