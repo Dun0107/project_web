@@ -1,445 +1,149 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <title></title>
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <style>
-    body {
-      font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
-
-    }
-    .menu {
-      position: fixed;
-      margin-top: -10px;
-      margin-left: -8px;
-      margin-right: -10px;
-      height: 50px;
-      background: #2b2f3a;
-      width: 120%;
-    }
-    .menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      line-height: 1;
-    }
-    .menu > ul {
-      position: fixed;
-      background: #2b2f3a;
-      width: 100%;
-    }
-    .menu:after, .menu > ul:after {
-      content: ".";
-      display: block;
-      clear: both;
-      visibility: hidden;
-      line-height: 0;
-      height: 0;
-    }
-    .menu.align-right > ul > li {
-      float: right;
-    }
-    .menu.align-center ul {
-      text-align: center;
-    }
-    .menu.align-center ul ul {
-      text-align: left;
-    }
-    .menu > ul > li {
-      display: inline-block;
-      position: relative;
-      margin: 0;
-      padding: 0;
-    }
-    .menu > ul > #menu-button {
-      display: none;
-    }
-    .menu ul li a {
-      display: block;
-      font-family: Helvetica, sans-serif;
-      text-decoration: none;
-    }
-    .menu > ul > li > a {
-      font-size: 14px;
-      font-weight: bold;
-      padding: 15px 20px;
-      color: #fff;
-      text-transform: uppercase;
-      -webkit-transition: color 0.25s ease-out;
-      -moz-transition: color 0.25s ease-out;
-      -ms-transition: color 0.25s ease-out;
-      -o-transition: color 0.25s ease-out;
-      transition: color 0.25s ease-out;
-    }
-    .menu > ul > li.sub > a {
-      padding-right: 32px;
-    }
-    .menu > ul > li:hover > a {
-      color: #ffffff;
-    }
-    .menu li.sub::after {
-      display: block;
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-    }
-    .menu > ul > li.sub::after {
-      right: 10px;
-      top: 20px;
-      border: 5px solid transparent;
-      border-top-color: #7a8189;
-
-    }
-    .menu > ul > li:hover::after {
-      border-top-color: #ffffff;
-    }
-    .menu ul ul {
-      position: absolute;
-      left: -9999px;
-      top: 70px;
-      opacity: 0;
-      -webkit-transition: opacity .3s ease, top .25s ease;
-      -moz-transition: opacity .3s ease, top .25s ease;
-      -ms-transition: opacity .3s ease, top .25s ease;
-      -o-transition: opacity .3s ease, top .25s ease;
-      transition: opacity .3s ease, top .25s ease;
-      z-index: 1000;
-    }
-    .menu ul ul ul {
-      top: 37px;
-      padding-left: 5px;
-    }
-    .menu ul ul li {
-      position: relative;
-    }
-    .menu > ul > li:hover > ul {
-      left: auto;
-      top: 44px;
-      opacity: 1;
-    }
-    .menu.align-right > ul > li:hover > ul {
-      left: auto;
-      right: 0;
-      opacity: 1;
-    }
-    .menu ul ul li:hover > ul {
-      left: 170px;
-      top: 0;
-      opacity: 1;
-    }
-    .menu.align-right ul ul li:hover > ul {
-      left: auto;
-      right: 170px;
-      top: 0;
-      opacity: 1;
-      padding-right: 5px;
-    }
-    .menu ul ul li a {
-      width: 130px;
-      border-bottom: 1px solid #eeeeee;
-      padding: 10px 20px;
-      font-size: 12px;
-      color: #9ea2a5;
-      background: #ffffff;
-      -webkit-transition: all .35s ease;
-      -moz-transition: all .35s ease;
-      -ms-transition: all .35s ease;
-      -o-transition: all .35s ease;
-      transition: all .35s ease;
-    }
-    .menu.align-right ul ul li a {
-      text-align: right;
-    }
-    .menu ul ul li:hover > a {
-      background: #f2f2f2;
-      color: #8c9195;
-    }
-    .menu ul ul li:last-child > a, .menu ul ul li.last > a {
-      border-bottom: 0;
-    }
-    .menu > ul > li > ul::after {
-      content: '';
-      border: 6px solid transparent;
-      width: 0;
-      height: 0;
-      border-bottom-color: #ffffff;
-      position: absolute;
-      top: -12px;
-      left: 30px;
-    }
-    .menu.align-right > ul > li > ul::after {
-      left: auto;
-      right: 30px;
-    }
-    .menu ul ul li.sub::after {
-      border: 4px solid transparent;
-      border-left-color: #9ea2a5;
-      right: 10px;
-      top: 12px;
-      -moz-transition: all .2s ease;
-      -ms-transition: all .2s ease;
-      -o-transition: all .2s ease;
-      transition: all .2s ease;
-      -webkit-transition: -webkit-transform 0.2s ease, right 0.2s ease;
-    }
-    .menu.align-right ul ul li.sub::after {
-      border-left-color: transparent;
-      border-right-color: #9ea2a5;
-      right: auto;
-      left: 10px;
-    }
-    .menu ul ul li.sub:hover::after {
-      border-left-color: #ffffff;
-      right: -5px;
-      -webkit-transform: rotateY(180deg);
-      -ms-transform: rotateY(180deg);
-      -moz-transform: rotateY(180deg);
-      -o-transform: rotateY(180deg);
-      transform: rotateY(180deg);
-    }
-    .menu.align-right ul ul li.sub:hover::after {
-      border-right-color: #ffffff;
-      border-left-color: transparent;
-      left: -5px;
-      -webkit-transform: rotateY(180deg);
-      -ms-transform: rotateY(180deg);
-      -moz-transform: rotateY(180deg);
-      -o-transform: rotateY(180deg);
-      transform: rotateY(180deg);
+    .container {
+      max-width: 960px;
     }
 
-  </style>
+  /*
+   * Custom translucent site header
+   */
+
+   .site-header {
+    background-color: #0B2161;
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+  .site-header a {
+    color: white;
+    transition: ease-in-out color .15s;
+  }
+  .site-header a:hover {
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  /*
+   * Extra utilities
+   */
+
+   .flex-equal > * {
+    -ms-flex: 1;
+    flex: 1;
+  }
+  @media (min-width: 768px) {
+    .flex-md-equal > * {
+      -ms-flex: 1;
+      flex: 1;
+    }
+  }
+</style>
 </head>
 <body>
 
-  <div class='menu'>
-    <ul>
-      <li style="margin-left: 1%"><h2 style="font-family: Helvetica, sans-serif; color: white;">2020 공유기</h2></li>
-      <!-- <li style="margin-left: 5%">
-        <a href='fast.php'>빠른 설치</a>
-      </li>
-      <li class="active sub">
-        <a href='#'>기본</a>
-        <ul>
-          <li>
-            <a href='#'>네트워크 맵</a>
-          </li>
-          <li>
-            <a href='#'>인터넷</a>
-          </li>
-          <li>
-            <a href='#'>무선</a>
-          </li>
-          <li class='sub'>
-            <a href='#'>USB 설정</a>
-            <ul>
-              <li>
-                <a href='#'>공유 액세스</a>
-              </li>
-              <li class='last'>
-                <a href='#'>프린터 서버</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href='#'>보호자 제어</a>
-          </li>
-          <li>
-            <a href='#'>게스트 네트워크</a>
-          </li>
-          <li>
-            <a href='#'>공유기 클라우드</a>
-          </li>
-        </ul>
-      </li>
-      <li class='active sub' style="margin-right: 800px;">
-        <a href='#'>고급</a>
-        <ul>
-          <li>
-            <a href='#'>상태</a>
-          </li>
-          <li class='sub'>
-            <a href='#'>네트워크</a>
-            <ul>
-              <li>
-                <a href='#'>인터넷</a>
-              </li>
-              <li>
-                <a href='#'>LAN</a>
-              </li>
-              <li>
-                <a href='#'>IPTV/VLAN</a>
-              </li>
-              <li>
-                <a href='#'>DHCP 서버</a>
-              </li>
-              <li>
-                <a href='#'>동적 DNS</a>
-              </li>
-              <li class='last'>
-                <a href='#'>고급 라우팅</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href='#'>작동 모드</a>
-          </li>
-          <li class='sub'>
-            <a href='#'>무선</a>
-            <ul>
-              <li>
-                <a href='#'>무선 설정</a>
-              </li>
-              <li>
-                <a href='#'>WPS</a>
-              </li>
-              <li class='last'>
-                <a href='#'>통계</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href='#'>게스트 네트워크</a>
-          </li>
-          <li class='sub'>
-            <a href='#'>USB 설정</a>
-            <ul>
-              <li>
-                <a href='#'>장치 설정</a>
-              </li>
-              <li>
-                <a href='#'>공유 액세스</a>
-              </li>
-              <li>
-                <a href='#'>프린터 서버</a>
-              </li>
-              <li class='last'>
-                <a href='#'>오프라인 다운로드</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href='#'>보호자 제어</a>
-          </li>
-          <li>
-            <a href='#'>QoS</a>
-          </li>
-          <li class='sub'>
-            <a href='#'>보안</a>
-            <ul>
-              <li>
-                <a href='#'>설정</a>
-              </li>
-              <li>
-                <a href='#'>액세스 제어</a>
-              </li>
-              <li class='last'>
-                <a href='#'>IP&MAC 바인딩</a>
-              </li>
-            </ul>
-          </li>
-          <li class='sub'>
-            <a href='#'>NAT 포워딩</a>
-            <ul>
-              <li>
-                <a href='#'>ALG</a>
-              </li>
-              <li>
-                <a href='#'>포트 포워딩</a>
-              </li>
-              <li>
-                <a href='#'>포트 트리거</a>
-              </li>
-              <li>
-                <a href='#'>DMZ</a>
-              </li>
-              <li class='last'>
-                <a href='#'>UPnP</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href='#'>IPv6</a>
-          </li>
-          <li class='sub'>
-            <a href='#'>VPN 서버</a>
-            <ul>
-              <li>
-                <a href='#'>OpenVPN</a>
-              </li>
-              <li>
-                <a href='#'>PPTP VPN</a>
-              </li>
-              <li class='last'>
-                <a href='#'>VPN 연결</a>
-              </li>
-            </ul>
-          </li>
-          <li class='sub'>
-            <a href='#'>시스템 도구</a>
-            <ul>
-              <li>
-                <a href='#'>진단</a>
-              </li>
-              <li>
-                <a href='#'>펌웨어 업그레이드</a>
-              </li>
-              <li>
-                <a href='#'>백업 및 복원</a>
-              </li>
-              <li>
-                <a href='#'>재부팅 일정</a>
-              </li>
-              <li>
-                <a href='management.php'>관리</a>
-              </li>
-              <li>
-                <a href='#'>시스템 로그</a>
-              </li>
-              <li>
-                <a href='#'>트레픽 통계</a>
-              </li>
-              <li>
-                <a href='#'>시스템 매개 변수</a>
-              </li>
-              <li class='last'>
-                <a href='#'>WOL</a>
-              </li>
-            </ul>
-          </li> -->
-        </ul>
-      </li>
-     <!--  <button type="button" style="margin-right: 15px; width:80px; height:40px; border: none; text-align: center; text-decoration: none; display: inline-block; font-size: 15px; border-radius:10px;">
-        <a href="" style="color: #2b2f3a;text-decoration-line: none; font-family: Helvetica, sans-serif; font-weight: 900;">로그아웃</a>
-      </button>
-      <button type="button" style="width:80px; height:40px; border: none; text-align: center; text-decoration: none; display: inline-block; font-size: 15px; border-radius:10px;">
-        <a href="" style="color: #2b2f3a; text-decoration-line: none; font-family: Helvetica, sans-serif; font-weight: 900;">재부팅</a>
-      </button> -->
-    </ul>
-  </div>
-  <br><br><br><br><br>
-  <center>
-    <h1 style="color:#2b2f3a; text-decoration-line: none; font-family: Helvetica, sans-serif; font-size: 40px; font-weight: 900; margin-top: 40px;">로그인</h1>
-    <!-- <div style="width: 80%; margin-top: 100px;">
-      <div style="background-color: #2b2f3a; display: inline; width: 24%; float: left; border-left-style:solid; border-top-style:solid; border-bottom-style:solid; border-radius: 100px 0px 0px 100px"><h3 style="font-family: Helvetica, sans-serif; font-weight: 900; color: white;">25%</h3></div>
-      <div style="background-color: white; display: inline; width: 74%; float: left; border-right-style:solid; border-top-style:solid; border-bottom-style:solid; border-radius: 0px 100px 100px 0px"><h3 style="font-family: Helvetica, sans-serif; font-weight: 900;">&nbsp;</h3></div>
-    </div> -->
-    <div style="width: 80%; margin-top: 60px;">
-      <form>
-        <br><br>
-        <h2 style="display: inline">id : </h2><input style="margin-left: 85px; display: inline; height: 35px; width: 300px; text-align: center; font-size: 20px;" type="text" name="id">
-        <br><br><br>
-        <h2 style="display: inline">password : </h2><input style="display: inline; height: 35px; width: 300px; text-align: center; font-size: 20px;" type="password" name="password">
-        <center><button type="button" style="background: #2b2f3a; margin-top: 80px; margin-right: 15px; width:80px; height:40px; border: none; text-align: center; text-decoration: none; display: inline-block; font-size: 15px; ">
-        <a style="color: white;text-decoration-line: none; font-family: Helvetica, sans-serif; font-weight: 900;">로그인</a>
-      </button></center>
-      </form>
+  <nav class="navbar navbar-dark " style=" background-color: #0B2161;">
+    <a class="py-2"  aria-label="Product"style="color: white" >
+      <svg   xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>RouteR
+    </a>
+
+
+
+    <form  action="logout.php">
+      <button style="background-color:white; color: #0B2161"  value='Logout' class="btn btn-dark btn-sm">로그인</button>
+    </form>
+
+    
+    
+  </nav>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/images/img2.png" class="d-block w-100 " height="800" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4 font-weight-normal" style=" font-weight: 700" >
+            2020 
+          </h2>
+          <h4  style=" font-weight: 700" >
+            스마트 공유기는 보안이 강력합니다    
+          </h4>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/images/img1.jpg"class="d-block w-100 " height="800" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4 font-weight-normal" style="font-weight: 700" >
+            2020 
+          </h2>
+          <h4 style=" font-weight: 700" >
+           스마트 공유기는 어디서나 관리 할 수 있습니다
+         </h4>    
+       </div>
+     </div>
+     <div class="carousel-item">
+      <img src="/images/img3.png"class="d-block w-100 " height="800" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2 class="display-4 font-weight-normal" style="font-weight: 700" >
+          2020 
+        </h2>
+        <h4 style=" font-weight: 700" >
+         스마트 공유기는 속도 제한이 없습니다
+       </h4>    
+     </div>
+   </div>
+ </div>
+ <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+</a>
+</div>
+
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+  <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden" style="background-color: #0B2161">
+    <div class="my-3 py-3" >
+      <h2 class="display-5">WEB</h2>
+      <p class="lead">나지혜  박지윤</p>
     </div>
-    <br>
-  </center>
-  <br>
-  
+    <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  </div>
+  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 p-3">
+      <h2 class="display-5">APP</h2>
+      <p class="lead">전예진  정현성</p>
+    </div>
+    <div class=" shadow-sm mx-auto" style="background-color: #0B2161; width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  </div>
+  <div class=" mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden" style="background-color: #0B2161">
+    <div class="my-3 py-3">
+      <h2 class="display-5">NETWORK</h2>
+      <p class="lead">윤성준  표상영</p>
+    </div>
+    <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  </div>
+</div>
+
+
+
+
+
 </body>
 </html>
