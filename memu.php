@@ -53,9 +53,6 @@
 						</ul>
 					</li>
 					<li >
-						<a href='#'>보호자 제어</a>
-					</li>
-					<li >
 						<a href='#'>게스트 네트워크</a>
 					</li>
 					<li >
@@ -166,7 +163,7 @@
 						</ul>
 					</li>
 					<li >
-						<a href='#'>보호자 제어</a>
+						<a href='guard.php'>보호자 제어</a>
 					</li>
 					<li>
 						<a href='#'>QoS</a>
