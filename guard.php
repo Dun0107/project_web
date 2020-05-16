@@ -1,5 +1,5 @@
 <body>
-  <?php
+  <?
   include "memu.php";
   include "connect.php";
   $query = "select no,name,mac from guard";
@@ -21,7 +21,7 @@
           <th style="border: 0.1px solid black"></th>
         </tr>
 
-        <?php
+        <?
         while($row = mysqli_fetch_row($result))
         {
           ?>
@@ -51,4 +51,3 @@
 
   </div>
 </body>
-

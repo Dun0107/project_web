@@ -1,4 +1,4 @@
-<?php
+<?
 	include ("memu.php");
 
   $fast1=$_POST['fast1'];

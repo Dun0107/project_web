@@ -17,7 +17,7 @@ $result = mysqli_query($con, $query);
 		<th style="border: 0.1px solid black"></th>
 	</tr>
 
-	<?php
+	<?
 	while($row = mysqli_fetch_row($result))
 	{
 		?>

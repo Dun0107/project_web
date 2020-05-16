@@ -1,4 +1,4 @@
-<?php
+<?
 
 include "./connect.php";
 $no = $_GET['no'];

@@ -98,14 +98,14 @@
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light " style="height: 700px;">
   <div class="col-md-5 p-lg-5 mx-auto my-5">
     <h1 class="display-4 font-weight-normal" style="font-weight: 700" >로그인</h1>
-    <?php
+    <?
       session_start();
       if($_SESSION['id'] == null){
 
       ?>
 
 
-<form name="login_form" action="login_check.php" method="post">
+<form name="login_form" action="login.php" method="post">
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
   <label for="inputEmail" class="sr-only">ID</label>
   <input type="text"class="form-control" name="id" placeholder="ID" required >
@@ -116,7 +116,7 @@
   
 </form>
 
-<?php
+<?
 }else{
 
 }

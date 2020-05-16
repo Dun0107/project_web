@@ -1,4 +1,4 @@
-<?php
+<?
 	include ("memu.php");
 ?>
 <style>
@@ -46,29 +46,10 @@
   <div class="col-md-5 p-lg-5 mx-auto my-5">
   
 
-<?php
-session_start();
-include ("connect.php");
 
-$id = $_POST['id'];
-$password = $_POST['password'];
-
-$query = "select * from member where id='$id' and password='$password'";
-$result = mysqli_query($con,$query);
-$row = mysqli_fetch_array($result);
-
-if($id==$row['id'] && $password==$row['password']){
-$_SESSION['id'] = $row['id'];
-
-?>
 <h1 class="display-4 font-weight-normal" style="font-family:Georgia, 'Times New Roman', Times, serif" >Login Successful</h1>
 <a style="color: gray" href='logout.php'value='Logout' >Logout</a>
-<?php
-}else{
-echo "<script>window.alert('invalid username or password');</script>";
-echo "<script>location.href='index.php';</script>";
-}
-?>
+
 </div></div>
 
 <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
