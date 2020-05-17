@@ -1,5 +1,7 @@
 <?
 include ("memu.php");
+
+
 ?>
 
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
@@ -19,44 +21,26 @@ include ("memu.php");
       <button type="button" value="PPTP" class="btn btn-outline-dark">PPTP</button>
       <br> <br><br><br><br>
       <input type="text" name="fast1"> -->
-      <div>
-        <div style="display: inline; float: left; margin-left: 37%">
+      
           <form action="fast2.php" method="post">
-            <input type="hidden" name="fast1" value="동적">
-            <button type="submit" class="btn btn-outline-dark" >동적</button>
+            <button type="submit" name="fast1" value="동적" class="btn btn-outline-dark" >동적</button>
+         
+            <button type="submit" class="btn btn-outline-dark" name="fast1" value="고정">고정</button>
+         
+            <button type="submit" class="btn btn-outline-dark" name="fast1" value="PPPoE">PPPoE</button>
+          
+            <button type="submit" class="btn btn-outline-dark" name="fast1" value="L2TP">L2TP</button>
+         
+            <button type="submit" class="btn btn-outline-dark" name="fast1" value="PPTP">PPTP</button>
+
           </form>
-        </div>
-        <div style="display: inline; float: left; margin-left: 1%">
-          <form action="fast2.php" method="post">
-            <input type="hidden" name="fast1" value="고정">
-            <button type="submit" class="btn btn-outline-dark" >고정</button>
-          </form>
-        </div>
-        <div style="display: inline; float: left; margin-left: 1%">
-          <form action="fast2.php" method="post">
-            <input type="hidden" name="fast1" value="PPPoE">
-            <button type="submit" class="btn btn-outline-dark" >PPPoE</button>
-          </form>
-        </div>
-        <div style="display: inline; float: left; margin-left: 1%">
-          <form action="fast2.php" method="post">
-            <input type="hidden" name="fast1" value="L2TP">
-            <button type="submit" class="btn btn-outline-dark" >L2TP</button>
-          </form>
-        </div>
-        <div style="display: inline; float: left; margin-left: 1%;">
-          <form action="fast2.php" method="post">
-            <input type="hidden" name="fast1" value="PPTP">
-            <button type="submit" class="btn btn-outline-dark" >PPTP</button>
-          </form>
-        </div>
-      </div>
+        <br><br>
+     
       <br>
-      <button style="background-color: #0B2161; margin-left: 40%" class="btn btn-dark btn-sm" onclick="location.href='fast2.php'">다음</button>
+     
 
       <br><br><br><br><br><br><br>
 
     </div>
   </div> 
-
 

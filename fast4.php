@@ -1,19 +1,19 @@
 <?
 include ("memu.php");
+session_start();
+$fast1 = $_SESSION['fast1'];
+$fast2 = $_SESSION['fast2'];
+$fast3 = $_SESSION['fast3'];
+$fast4 = $_SESSION['fast4'];
+$fast7 = $_SESSION['fast7'];
 
-$fast1=$_POST['fast1'];
-$fast2=$_POST['fast2'];
-$fast3=$_POST['fast3'];
-$fast4=$_POST['fast4'];
+
 $fast5=$_POST['fast5'];
 $fast6=$_POST['fast6'];
+$fast8=$_POST['fast8'];
 
-echo $fast1;
-echo $fast2;
-echo $fast3;
-echo $fast4;
-echo $fast5;
-echo $fast6;
+
+
 ?>
 
 
@@ -26,25 +26,29 @@ echo $fast6;
 
     <br>
     <div class="container ">
-      <div class="form-group row">
-        <label  class="col-sm-2 col-form-label">인터넷 연결 유형: <? echo $fast1 ?></label>
-
+      <div class="form-group row" >
+        <label class="col-sm-3 col-form-label">인터넷 연결 유형: </label>
+          <h1 class="col-sm-9 col-form-label" style="font-size: 20px;"> <? echo $fast1 ?></h1>      
       </div>
       <hr>
-      <div class="form-group row">
-        <label  class="col-sm-2 col-form-label">무선 2.4GHz: <? echo $fast2 ?></label>
 
+      <div class="form-group row">
+        <label  class="col-sm-3 col-form-label">무선 2.4GHz: </label>
+
+          <h1 class="col-sm-9 col-form-label" style="font-size: 20px"> <? echo $fast7 ?></h1>        
       </div>
 
 
       <div class="form-group row">
-        <label  class="col-sm-2 col-form-label">무선 네트워크 이름(SSID): <? echo $fast3 ?></label>
-
+        <label class="col-sm-3 col-form-label" >무선 네트워크 이름(SSID): </label>
+       
+          <h1 class="col-sm-9 col-form-label" style="font-size: 20px"> <? echo $fast3 ?></h1>        
       </div>
 
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label">비밀번호: <? echo $fast4 ?></label>
-
+        <label class="col-sm-3 col-form-label">비밀번호:</label>
+          <h1 class="col-sm-9 col-form-label" style="font-size: 20px"> <? echo $fast4 ?></h1>
+        
       </div>
 
 
@@ -52,18 +56,18 @@ echo $fast6;
 
       <div class="container ">
         <div class="form-group row">
-          <label  class="col-sm-2 col-form-label">무선 5GHz: </label>
-
+          <label class="col-sm-3 col-form-label" >무선 5GHz: </label>
+          <h1 class="col-sm-9 col-form-label" style="font-size: 20px"> <? echo $fast8 ?></h1>
         </div>
 
         <div class="form-group row">
-          <label  class="col-sm-2 col-form-label">무선 네트워크 이름(SSID): <? echo $fast5 ?></label>
-
+          <label  class="col-sm-3 col-form-label">무선 네트워크 이름(SSID): </label>
+          <h1 class="col-sm-9 col-form-label" style="font-size: 20px"> <? echo $fast5 ?></h1>
         </div>
 
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">비밀번호: <? echo $fast6 ?></label>
-
+          <label class="col-sm-3 col-form-label">비밀번호: </label>
+          <h1 class="col-sm-9 col-form-label" style="font-size: 20px"> <? echo $fast6 ?></h1>
         </div>
 
         <br><br>
