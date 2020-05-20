@@ -1,5 +1,5 @@
 <?
-include ("connect.php");
+include('connect.php');
 $name = $_POST['name'];
 $mac = $_POST['mac'];
 

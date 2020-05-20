@@ -1,6 +1,5 @@
 <?
-
-include "./connect.php";
+include('connect.php');
 $no = $_GET['no'];
 
 if($no != null){

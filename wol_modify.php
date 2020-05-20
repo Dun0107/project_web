@@ -1,5 +1,5 @@
 <?
-    include ("memu.php");
+include('memu.php');
     
 ?>
 
@@ -39,7 +39,8 @@
                 <td> <?php echo $row[2] ?></td> 
                 <td></td>
                 <td>
-                    <button style="background-color: #0B2161;" type="submit" class="btn btn-primary btn-sm" onclick="location.href='wol_modify.php?no=<? echo $row[0]?>'"?>수정 </button> 
+                  <button style="background-color: #0B2161;" type="submit" class="btn btn-primary btn-sm" onclick="modify()"?>수정 </button>  
+                  
                 </td>
                 <td>
                     <button style="background-color: #0B2161;" type="submit" class="btn btn-primary btn-sm" onclick="location.href='wol_delete.php?no=<?php echo $row[0]?>'">삭제</button>
@@ -53,30 +54,43 @@
         
     </tbody>
 </table>
+<?
+$no =$_GET['no'];
 
+    $query1 = "select no,name,mac from wol where no=$no";
+    $result2 = mysqli_query($con,$query1);
+while ($row = mysqli_fetch_row($result2)){ ?>
     <br>
       <div class="card" >
           <div class="card-body"><br>
-          <form method="post" action="woladd.php">
+          <form method="post" action="wol_m2.php">
+
+            
+
           <div class="form-group row ">
+            <input class="form-control" type="hidden" name="no" value="<? echo $row[0] ?>" required> 
           <label  class="col-sm-2 col-form-label">장치 이름:</label>      
           <div class="col-sm-15">
-            <input class="form-control" type="text" name="name"  required>    
+            <input class="form-control" type="text" name="name" value="<? echo $row[1] ?>" required>    
           </div>
         </div>
 
         <div class="form-group row">
           <label  class="col-sm-2 col-form-label">MAC 주소:</label>
           <div class="col-sm-15">
-            <input class="form-control" type="text" name="mac"  required>    
+            <input class="form-control" type="text" name="mac" value="<? echo $row[2] ?>" required>    
           </div>
         </div>
 
-    <button  class="btn btn-outline-primary" style="background-color: #0B2161; color: white;" type="submit">저장</button>
+    <button  class="btn btn-outline-primary" style="background-color: #0B2161; color: white;" type="submit">수정 </button>
           </form>
+<?
+} 
 
+?>
 
         </div></div>
+        
         
 
         
@@ -86,5 +100,4 @@
                    
 
 
- 
  

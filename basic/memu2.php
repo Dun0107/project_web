@@ -221,7 +221,7 @@
 								<a href='#' >시스템 매개 변수</a>
 							</li>
 							<li style=" list-style: circle">
-								<a href='#' >WOL</a>
+								<a href='wol.php' >WOL</a>
 							</li>
 						</ul>
 					</li>
