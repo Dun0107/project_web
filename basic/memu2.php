@@ -160,12 +160,12 @@
 								<a href='#' >액세스 제어</a>
 							</li>
 							<li class='last' style=" list-style: circle">
-								<a href='#' >IP&MAC 바인딩</a>
+								<a href='../binding.php' >IP&MAC 바인딩</a>
 							</li>
 						</ul>
 					</li>
 					<li >
-						<a href='#'>보호자 제어</a>
+						<a href='../guard.php'>보호자 제어</a>
 					</li>
 					<li>
 						<a href='#'>QoS</a>
@@ -177,7 +177,7 @@
 								<a href='#' >ALG</a>
 							</li>
 							<li style=" list-style: circle">
-								<a href='#' >포트 포워딩</a>
+								<a href='../portf.php' >포트 포워딩</a>
 							</li>
 							<li style=" list-style: circle">
 								<a href='#' >포트 트리거</a>
@@ -221,7 +221,7 @@
 								<a href='#' >시스템 매개 변수</a>
 							</li>
 							<li style=" list-style: circle">
-								<a href='wol.php' >WOL</a>
+								<a href='../wol.php' >WOL</a>
 							</li>
 						</ul>
 					</li>

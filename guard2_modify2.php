@@ -1,6 +1,6 @@
 <?
 
-include "./connect.php";
+include "connect.php";
 $domain=$_POST['domain'];
 $no =$_POST['no'];
 

@@ -1,6 +1,6 @@
 <?
 
-include "./connect.php";
+include "connect.php";
 $no = $_GET['no'];
 
 $query = "select no, domain from guard2 where no=$no";

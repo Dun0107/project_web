@@ -4,9 +4,9 @@ include('memu.php');
 ?>
 
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <div class="col-md-5 p-lg-5 mx-auto my-5">
+  <div class="col-md-8 p-lg-5 mx-auto my-5">
   <h1 class="display-7 font-weight-normal" style="font-weight: 700" >WOL</h1> <br>
-  </div><hr><br><br>
+  <hr><br><br>
 
 <br>
 
@@ -89,7 +89,7 @@ while ($row = mysqli_fetch_row($result2)){ ?>
 
 ?>
 
-        </div></div>
+        </div></div></div>
         
         
 
